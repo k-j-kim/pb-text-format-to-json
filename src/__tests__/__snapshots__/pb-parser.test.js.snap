@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pb-parser parse 1`] = `
+Object {
+  "category": "SANS_SERIF",
+  "date_added": "2020-01-17",
+  "designer": "Kosal Sen",
+  "fonts": Array [
+    Object {
+      "copyright": "Copyright 2015 The Sen Project Authors (https://github.com/philatype/Sen)",
+      "filename": "Sen-Regular.ttf",
+      "full_name": "Sen Regular",
+      "name": "Sen",
+      "post_script_name": "Sen-Regular",
+      "style": "normal",
+      "weight": 400,
+    },
+    Object {
+      "copyright": "Copyright 2015 The Sen Project Authors (https://github.com/philatype/Sen)",
+      "filename": "Sen-Bold.ttf",
+      "full_name": "Sen Bold",
+      "name": "Sen",
+      "post_script_name": "Sen-Bold",
+      "style": "normal",
+      "weight": 700,
+    },
+    Object {
+      "copyright": "Copyright 2015 The Sen Project Authors (https://github.com/philatype/Sen)",
+      "filename": "Sen-ExtraBold.ttf",
+      "full_name": "Sen ExtraBold",
+      "name": "Sen",
+      "post_script_name": "Sen-ExtraBold",
+      "style": "normal",
+      "weight": 800,
+    },
+  ],
+  "license": "OFL",
+  "name": "Sen",
+  "subsets": Array [
+    "latin",
+    "latin-ext",
+    "menu",
+  ],
+}
+`;

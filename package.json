@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/k-j-kim/pb-parser/issues"
   },
-  "homepage": "https://github.com/k-j-kim/pb-parser#readme"
+  "homepage": "https://github.com/k-j-kim/pb-parser#readme",
+  "keywords": ["protobuf", "textformat", "json"]
 }

@@ -1,5 +1,21 @@
 import parsimmon from 'parsimmon';
-import { JSONArray, JSONObject, ParseResult, Values } from './types';
+
+export type ParseResult = parsimmon.Success<any> | (parsimmon.Failure & { error: string });
+export type Values = Array<{type: 'pair'; name: string; value: any} | {type: 'message'; name: string; values: any}>; 
+
+export type JSONValue =
+    | string
+    | number
+    | boolean
+    | null
+    | JSONObject 
+    | JSONArray;
+
+export interface JSONObject {
+    [x: string]: JSONValue;
+}
+
+export interface JSONArray extends Array<JSONValue> { }
 
 const {
     regex,
@@ -68,7 +84,7 @@ function parseRaw(input: string): ParseResult {
     return result;
 }
 
-export function parse(input: string, schema = {}) {
+export function parse(input: string, schema = {}): JSONObject | {error: string} {
     const raw = parseRaw(input);
     if ('error' in raw) {
         console.error(raw.error);

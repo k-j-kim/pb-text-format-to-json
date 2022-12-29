@@ -1,7 +1,5 @@
 import parsimmon from 'parsimmon';
-
-type ParseResult = parsimmon.Success<any> | (parsimmon.Failure & { error: string });
-type Values = Array<{type: 'pair'; name: string; value: any} | {type: 'message'; name: string; values: any}>; 
+import { JSONArray, JSONObject, ParseResult, Values } from './types';
 
 const {
     regex,
@@ -80,17 +78,15 @@ export function parse(input: string, schema = {}) {
     }
 }
 
-type IndexedObject = {[index: string]: any[]};
-
-function toObject(input: Values, schema: IndexedObject = {}) {
-    const result = input.reduce((acc: IndexedObject, item) => {
+function toObject(input: Values, schema: JSONObject = {}) {
+    const result = input.reduce((acc: JSONObject, item) => {
         var value = item.type === 'message' ? toObject(item.values) : item.value;
         var isArray = schema[item.name] && schema[item.name] instanceof Array;
 
         if (!(item.name in acc)) {
             acc[item.name] = isArray ? [value] : value;
         } else if (acc[item.name] instanceof Array) {
-            acc[item.name].push(value);
+            (<JSONArray>acc[item.name]).push(value);
         } else {
             acc[item.name] = [acc[item.name], value];
         }

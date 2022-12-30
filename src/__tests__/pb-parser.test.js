@@ -1,4 +1,4 @@
-import { parse } from '../pb-parser.js';
+import { parse } from '../../dist/pb-parser.js';
 import fs from 'fs';
 import { expect } from '@jest/globals';
 

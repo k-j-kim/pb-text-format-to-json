@@ -80,6 +80,8 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
+
+# Ignore transpiled JS
 dist
 
 # Gatsby files

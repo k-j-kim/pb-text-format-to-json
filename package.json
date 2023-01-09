@@ -1,16 +1,16 @@
 {
   "name": "pb-text-format-to-json",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Protobuf text format to JSON parser.",
   "main": "dist/pb-parser.js",
   "types": "dist/pb-parser.d.ts",
   "type": "module",
   "dependencies": {
-    "colors": "^1.4.0",
-    "jest": "^26.6.3",
     "parsimmon": "^1.16.0"
   },
   "devDependencies": {
+    "colors": "^1.4.0",
+    "jest": "^26.6.3",
     "@types/parsimmon": "^1.10.6",
     "typescript": "^4.9.4"
   },
